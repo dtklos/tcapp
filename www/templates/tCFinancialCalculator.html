@@ -1,0 +1,99 @@
+<ion-view title="TC Financial Calculator" id="page1" style="">
+  <ion-nav-buttons side="left" scroll="false" class="has-header">
+    <button class="button button-icon icon No Icon"></button>
+  </ion-nav-buttons>
+  <ion-content padding="true" scroll="false" class="has-header">
+    <div>
+      <a style="display:block;" >
+        <img src="img/AdHq0zLYQpOg07vtfYSt_logo.png" style="display: block; width: 211px; height: 70px; margin-left: auto; margin-right: auto;" href-inappbrowser="http://truthconcepts.com">
+      </a>
+    </div>
+    <br>
+    <center>
+      <ion-grid>
+      <ion-row>
+        <ion-col><button id="PV1Button" onclick="calcHandle('PV1')" style="height:15px; width:50px" type="button" class="button button-dark button-outline small_button"><span id="PV1Label">PV</span></button></ion-col>
+        <ion-col><input id="PV1" onfocus="inputUpd(this.id);SelectAll(this.id);" style="width:150px;height:20px" onfocusout="valUpd(this.id);"></ion-col>
+        <ion-col><button id="PV1SwitchButton" onclick="SwitchFunc('PV1')" style="width:25px" type="button" class="button button-outline button-positive mini_button">+/-</button></ion-col>
+      </ion-row>
+        <br>
+      <ion-row>
+        <ion-col><span id="B1Label">Beg</span></ion-col>
+        <ion-col><button id="PM1Button" onclick="calcHandle('PM1')" style="height:15px; width:50px" type="button" class="button button-dark button-outline small_button"><span id="PM1Label">Pmt</span></button></ion-col>
+        <ion-col><input id="PM1" onfocus="inputUpd(this.id);SelectAll(this.id);" style="width:150px;height:20px" onfocusout="valUpd(this.id);"></ion-col>
+        <ion-col><button id="PM1SwitchButton" onclick="SwitchFunc('PM1')" style="width:25px" type="button" class="button button-outline button-positive mini_button">+/-</button></ion-col>
+        <ion-col><span id="E1Label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></ion-col>
+      </ion-row>
+        <br>
+      <ion-row>
+        <ion-col><button id="NP1Button" onclick="calcHandle('NP1')" style="height:15px; width:50px" class="button button-dark button-outline small_button" type="button">NPer</button></ion-col>
+        <ion-col><input id="NP1" onfocus="inputUpd(this.id);SelectAll(this.id);" style="width:150px;height:20px" onfocusout="valUpd(this.id);"></ion-col>
+        <ion-col><button id="NP1SwitchButton" onclick="SwitchFunc('NP1')" style="width:25px" type="button" class="button button-outline button-positive mini_button">+/-</button></ion-col>
+      </ion-row>
+        <br>
+      <ion-row>
+        <ion-col><button id="IR1Button" onclick="calcHandle('IR1')" style="height:15px; width:50px" class="button button-dark button-outline small_button" type="button">IRate %</button></ion-col>
+        <ion-col><input id="IR1" onfocus="inputUpd(this.id);SelectAll(this.id);" style="width:150px;height:20px" onfocusout="valUpd(this.id);"></ion-col>
+        <ion-col><button id="IR1SwitchButton" onclick="SwitchFunc('IR1')" style="width:25px" type="button" class="button button-outline button-positive mini_button">+/-</button></ion-col>
+      </ion-row>
+        <br>
+      <ion-row>
+        <ion-col><button id="FV1Button" onclick="calcHandle('FV1')" style="height:15px; width:50px" class="button button-dark button-outline small_button" type="button">FV</button></ion-col>
+        <ion-col><input id="FV1" onfocus="inputUpd(this.id);this.setSelectionRange(0, 99999);" style="width:150px;height:20px" onfocusout="valUpd(this.id);"></ion-col>
+        <ion-col><button id="FV1SwitchButton" onclick="SwitchFunc('FV1')" style="width:25px" type="button" class="button button-outline button-positive mini_button">+/-</button></ion-col>
+      </ion-row>
+      </ion-grid>
+
+          <div class="row">
+            <div class="col"><button id="BE1Button" onclick="BEToggle(this)" class="button button-dark button-small button-block button-outline"><span id="BE1Label">Beg/End of Period</span></button></div>
+            <div class="col"><button id="AButton1" onclick="barClick(this)" class="button button-dark button-small button-block button-outline">A</button></div>
+            <div class="col"><button id="MButton1" onclick="barClick(this)" class="button button-dark button-small button-block button-outline">M</button></div>
+            <div class="col"><button id="SButton1" onclick="barClick(this)" class="button button-dark button-small button-block button-outline">S</button></div>
+            <div class="col"><button id="QButton1" onclick="barClick(this)" class="button button-dark button-small button-block button-outline">Q</button></div>
+            <div class="col"><button id="clrButton1" onclick="clearIn(1)" class="button button-assertive button-small button-block icon ion-backspace-outline"></button></div>
+          </div>
+<br>
+        <ion-grid>
+        <ion-row>
+          <ion-col><button id="PV2Button" onclick="calcHandle('PV2')" style="height:15px; width:50px" type="button" class="button button-dark button-outline small_button"><span id="PV2Label">PV</span></button></ion-col>
+          <ion-col><input id="PV2" onfocus="inputUpd(this.id);SelectAll(this.id);" style="width:150px;height:20px" onfocusout="valUpd(this.id);"></ion-col>
+          <ion-col><button id="PV2SwitchButton" onclick="SwitchFunc('PV2')" style="width:25px" type="button" class="button button-outline button-positive mini_button">+/-</button></ion-col>
+        </ion-row>
+          <br>
+        <ion-row>
+          <ion-col><span id="B2Label">Beg</span></ion-col>
+          <ion-col><button id="PM2Button" onclick="calcHandle('PM2')" style="height:15px; width:50px" type="button" class="button button-dark button-outline small_button"><span id="PM2Label">Pmt</span></button></ion-col>
+          <ion-col><input id="PM2" onfocus="inputUpd(this.id);SelectAll(this.id);" style="width:150px;height:20px" onfocusout="valUpd(this.id);"></ion-col>
+          <ion-col><button id="PM2SwitchButton" onclick="SwitchFunc('PM2')" style="width:25px" type="button" class="button button-outline button-positive mini_button">+/-</button></ion-col>
+          <ion-col><span id="E2Label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></ion-col>
+        </ion-row>
+          <br>
+        <ion-row>
+          <ion-col><button id="NP2Button" onclick="calcHandle('NP2')" style="height:15px; width:50px" class="button button-dark button-outline small_button" type="button">NPer</button></ion-col>
+          <ion-col><input id="NP2" onfocus="inputUpd(this.id);SelectAll(this.id);" style="width:150px;height:20px" onfocusout="valUpd(this.id);"></ion-col>
+          <ion-col><button id="NP2SwitchButton" onclick="SwitchFunc('NP2')" style="width:25px" type="button" class="button button-outline button-positive mini_button">+/-</button></ion-col>
+        </ion-row>
+          <br>
+        <ion-row>
+          <ion-col><button id="IR2Button" onclick="calcHandle('IR2')" style="height:15px; width:50px" class="button button-dark button-outline small_button" type="button">IRate %</button></ion-col>
+          <ion-col><input id="IR2" onfocus="inputUpd(this.id);SelectAll(this.id);" style="width:150px;height:20px" onfocusout="valUpd(this.id);"></ion-col>
+          <ion-col><button id="IR2SwitchButton" onclick="SwitchFunc('IR2')" style="width:25px" type="button" class="button button-outline button-positive mini_button">+/-</button></ion-col>
+        </ion-row>
+          <br>
+        <ion-row>
+          <ion-col><button id="FV2Button" onclick="calcHandle('FV2')" style="height:15px; width:50px" class="button button-dark button-outline small_button" type="button">FV</button></ion-col>
+          <ion-col><input id="FV2" onfocus="inputUpd(this.id);SelectAll(this.id);" style="width:150px;height:20px" onfocusout="valUpd(this.id);"></ion-col>
+          <ion-col><button id="FV2SwitchButton" onclick="SwitchFunc('FV2')" style="width:25px" type="button" class="button button-outline button-positive mini_button">+/-</button></ion-col>
+        </ion-row>
+      </ion-grid>
+      <div class="row">
+        <div class="col"><button id="BE2Button" onclick="BEToggle(this)" class="button button-dark button-small button-block button-outline"><span id="BE2Label">Beg/End of Period</span></button></div>
+        <div class="col"><button id="AButton2" onclick="barClick(this)" class="button button-dark button-small button-block button-outline">A</button></div>
+        <div class="col"><button id="MButton2" onclick="barClick(this)" class="button button-dark button-small button-block button-outline">M</button></div>
+        <div class="col"><button id="SButton2" onclick="barClick(this)" class="button button-dark button-small button-block button-outline">S</button></div>
+        <div class="col"><button id="QButton2" onclick="barClick(this)" class="button button-dark button-small button-block button-outline">Q</button></div>
+        <div class="col"><button id="clrButton2" onclick="clearIn(2)" class="button button-assertive button-small button-block icon ion-backspace-outline"></button></div>
+      </div>
+        </center>
+  </ion-content>
+</ion-view>

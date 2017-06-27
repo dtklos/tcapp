@@ -1,0 +1,24 @@
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+@import "../www/lib/ionic/scss";
+.text1 {
+	width: 200px;
+}
+
+.no-padding {
+	padding: 0!important;
+}
+
+.small_button {
+	line-height: 5px !important;
+	min-height: 20px !important;
+	font-size: 8pt !important;
+	width: 72px !important;
+}
+
+.mini_button {
+	line-height: 5px !important;
+	min-height: 20px !important;
+	font-size: 8pt !important;
+	width: 5px !important;
+}
+
